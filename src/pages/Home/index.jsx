@@ -12,10 +12,23 @@ export default function Home() {
     }
     return(
         <div className='container'>
-            { login ? <SignForm /> : <RegisterForm /> }
-
-            <p>Não tem conta?</p>
-            <Button type='link' onClick={() => {toggleLogin()}}>Registre-se aqui</Button>
+            { login ?
+                <div className="SignForm">
+                    <SignForm />
+                    <div className="content">
+                        <p>Não tem conta?</p>
+                        <Button type='link' onClick={() => {toggleLogin()}}>Registre-se aqui.</Button>
+                    </div>
+                </div>
+            :
+                <div className="RegisterForm">
+                    <RegisterForm />
+                    <div className="content">
+                        <p>Já tem conta?</p>
+                        <Button type='link' onClick={() => {toggleLogin()}}>Então, entre aqui.</Button>
+                    </div>
+                </div>
+            }
         </div>
     ) 
 }
