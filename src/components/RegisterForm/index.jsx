@@ -15,33 +15,18 @@ export default function RegisterForm() {
     }
     return (
         <div>
-            <h2>Sign in form</h2>
+            <h2>Registrar</h2>
             <form onSubmit={handleSubmit(submit)}>
 
-                <div>
-                    <label htmlFor='nome'>Nome:</label>
-                    <input type="text" name="nome" {...register("nome")}/>
-                </div>
+                    <input type="text" name="nome" {...register("nome")} placeholder='Nome'/>
 
-                <div>
-                    <label htmlFor='username'>Username:</label>
-                    <input type="text" name="username" {...register("username")}/>
-                </div>
+                    <input type="text" name="username" {...register("username")} placeholder='Username'/>
 
-                <div>
-                    <label htmlFor='CPF'>CPF:</label>
-                    <input type="text" name="CPF" {...register("CPF")}/>
-                </div>
+                    <input type="text" name="CPF" {...register("CPF")} placeholder='CPF'/>
 
-                <div>
-                    <label htmlFor='email'>email:</label>
-                    <input type="text" name="email" {...register("email")}/>
-                </div>
+                    <input type="text" name="email" {...register("email")} placeholder='Email'/>
 
-                <div>
-                    <label htmlFor='codigo_agente'>Código do agente:</label>
-                    <input type="text" name="codigo_agente" {...register("codigo_agente")}/>
-                </div>
+                    <input type="text" name="codigo_agente" {...register("codigo_agente")} placeholder='Código de agente'/>
 
                 <Button type="primary" htmlType='submit'>Enviar</Button>
             </form>
