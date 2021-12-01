@@ -1,0 +1,16 @@
+h2{
+    color: aqua;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid aqua;
+    width: 100%;
+    margin-bottom: .8rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+}
