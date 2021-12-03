@@ -1,5 +1,5 @@
 h2{
-    color: aqua;
+    color: #1890FF;
 }
 
 input{
@@ -13,4 +13,16 @@ form{
     display: flex;
     flex-direction: column;
     width: 90vw;
+}
+
+@media screen and (min-width: 1200px){
+    form{
+        width: 30vw;
+    }
+}
+
+@media screen and (min-width: 720px){
+    form{
+        width: 60vw;
+    }
 }
