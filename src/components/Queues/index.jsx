@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Table } from 'antd'
+import { useNavigate } from 'react-router-dom'
+import { Button, Table } from 'antd'
+import { EditOutlined } from '@ant-design/icons'
 import Api from '../../service/Api'
 import './index.css'
 
 export default function Queues() {
   const [queues, setQueues] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     function getQueues(){
@@ -26,7 +29,20 @@ export default function Queues() {
     getQueues()
 	}, [queues])
 
+  function redirect(id){
+    navigate(`/config/${id}`)
+  }
+
   const columns = [
+    {
+      title: 'Edit/Delete',
+      dataIndex: 'id',
+      render: id => (
+        <>
+          <Button onClick={() => redirect(id)} type='link'><EditOutlined /></Button>
+        </>
+      )
+    }, 
     {
       title: 'Name',
       dataIndex: 'name'
@@ -43,7 +59,7 @@ export default function Queues() {
 
   return (
     <div>
-      <Table columns={columns} dataSource={queues} pagination={{ pageSize: 50 }} scroll={{ y: 240 }}/>
+      <Table columns={columns} dataSource={queues} />
     </div>
   )
 }
