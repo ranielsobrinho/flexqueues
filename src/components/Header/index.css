@@ -1,0 +1,11 @@
+Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.headerTitle{
+  color: #ffffff;
+  letter-spacing: .2rem;
+}
