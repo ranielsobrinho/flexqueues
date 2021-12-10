@@ -1,12 +1,36 @@
 h2{
-    color: #1890FF;
+    color: #ff6a3d;
+    font-weight: 700;
 }
 
 input{
     border: none;
-    border-bottom: 1px solid aqua;
+    border-bottom: 1px solid #1A2238;
     width: 100%;
     margin-bottom: .8rem;
+}
+
+.ant-btn-primary{
+    background: #1A2238;
+    border-color: #1A2238;
+}
+
+.ant-btn-primary:hover{
+    background: #1A2238;
+    border-color: #1A2238;
+    color: #ff6a3d;
+}
+
+.ant-btn-link{
+    color:#ff6a3d;
+}
+
+.ant-btn-link:hover{
+    color:#fa3a00;
+}
+
+.ant-btn-link:focus{
+    color:#ff6a3d;
 }
 
 form{
