@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import Api from '../../service/Api'
+import React from 'react'
 
 export default function Queues() {
-	const [ queues, setQueues ] = useState([])
+	/*const [ queues, setQueues ] = useState([])
 
 	useEffect(() => {
 		Api.get('/api/queues')
@@ -15,24 +14,11 @@ export default function Queues() {
 
 	function testQueueContent () {
 		alert(queues)
-	}
+	} */
 
 	return (
 		<div className="containerQueue">
-			{queues ? queues
-				.map((queue, id) => {
-					return (
-						<div key={id}>
-							<p>{queue.name}</p>
-						</div>
-					)
-				})
-							:
-							<div>
-								<p>Hello world</p>
-								<button onClick={() => testQueueContent()}>Click here</button>
-							</div>
-					}
+			<h2>Hello world</h2>
 			</div>
 	)
 }
