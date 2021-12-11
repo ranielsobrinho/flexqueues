@@ -13,7 +13,8 @@ export default function SignForm() {
         console.log(data);
         Api.post('/api/auth', data)
         .then((res) => {
-            sessionStorage.setItem('token', res.data.data)
+            sessionStorage.setItem('token', res.data.token)
+            sessionStorage.setItem('userId', res.data.userId)
             navigate("/queues")
         }).catch((err) => console.log(err))
     }
