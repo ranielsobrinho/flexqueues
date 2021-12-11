@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button, Table } from 'antd'
-import { EditOutlined } from '@ant-design/icons'
+import { Button, message, Table } from 'antd'
+import { EditOutlined, CloseCircleOutlined } from '@ant-design/icons'
 import Api from '../../service/Api'
 import './index.css'
 
@@ -33,6 +33,14 @@ export default function Queues() {
     navigate(`/config/${id}`)
   }
 
+  function deleteQueue(id){
+    Api.delete(`/api/queues/${id}`)
+      .then((res) => {
+        message.info('Deletado com sucesso.')
+      })
+      .catch(error => message.error('Houve algo de errado.'))
+  }
+
   const columns = [
     {
       title: 'Edit/Delete',
@@ -40,6 +48,7 @@ export default function Queues() {
       render: id => (
         <>
           <Button onClick={() => redirect(id)} type='link'><EditOutlined /></Button>
+          <Button onClick={() => deleteQueue(id)} type='link'><CloseCircleOutlined /></Button>
         </>
       )
     }, 
