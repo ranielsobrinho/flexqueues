@@ -8,8 +8,13 @@
   background-color: #F0F2F5;
 }
 
+.edit-form{
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
 .edit-form > input{
-  background-color: #F0F2F5;
+  background-color: #ffffff;
 }
 
 .edit-buttons{
