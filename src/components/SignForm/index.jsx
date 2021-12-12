@@ -6,25 +6,25 @@ import Api from '../../service/Api'
 import './index.css'
 
 export default function SignForm() {
-    const {register, handleSubmit} = useForm()
+    const { register, handleSubmit } = useForm()
     const navigate = useNavigate()
 
     const submit = data => {
         console.log(data);
         Api.post('/api/auth', data)
-        .then((res) => {
-            sessionStorage.setItem('token', res.data.token)
-            sessionStorage.setItem('userId', res.data.userId)
-            navigate("/queues")
-        }).catch((err) => console.log(err))
+            .then((res) => {
+                sessionStorage.setItem('token', res.data.token)
+                sessionStorage.setItem('userId', res.data.userId)
+                navigate("/queues")
+            }).catch((err) => console.log(err))
     }
     return (
         <div className="form">
             <h2>Entrar</h2>
             <form onSubmit={handleSubmit(submit)}>
-                    <input type="text" name="username" {...register("username")} placeholder='Username'/>
-                    
-                    <input type="text" name="codigo_agente" {...register("codigo_agente")} placeholder='Código de agente'/>
+                <input type="text" name="username" {...register("username")} placeholder='Username' />
+
+                <input type="text" name="codigo_agente" {...register("codigo_agente")} placeholder='Código de agente' />
                 <Button type="primary" htmlType='submit'>Enviar</Button>
             </form>
         </div>
